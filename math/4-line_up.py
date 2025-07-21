@@ -1,21 +1,17 @@
 #!/usr/bin/env python3
-""" function to add two arrays"""
+"""This file defines the add_arrays function"""
 
 
 def add_arrays(arr1, arr2):
-    """ function : add two array
-
-    Arguments:
-        arr1 : first array
-        arr2 : second array
-
-    Returns:
-        new list
     """
-    if len(arr1) != len(arr2):
+    This function adds two arrays element-wise.
+    Args:
+        arr1 (list): this is the first array to add.
+        arr2 (list): this is the second array to add.
+    """
+    n = len(arr1)
+    m = len(arr2)
+    if n != m:
         return None
-
-    result = []
-    for i in range(len(arr1)):
-        result.append(arr1[i] + arr2[i])
-    return result
+    else:
+        return [arr1[i] + arr2[i] for i in range(n)]
