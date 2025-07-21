@@ -1,13 +1,19 @@
 #!/usr/bin/env python3
+""" function to calculate the shape of a matrix"""
+
+
 def matrix_shape(matrix):
-    ### Try 1
-    # if type(matrix[0]) != list:
-    #     return [len(matrix)]
-    # else:
-    #     return [len(matrix)] + matrix_shape(matrix[0])
-    matrix_shape = []
-    while (type(matrix) is list): 
-        #list of lists 
-        matrix_shape.append(len(matrix))
-        matrix = matrix[0]
-    return matrix_shape
+    """ function : calculate the shape of a matrix
+
+    Arguments:
+        matrix: matrix to calculate
+
+    Returns:
+        a list of integers
+    """
+    if not matrix or not isinstance(matrix, list):
+        return []
+
+    depth = matrix_shape(matrix[0])
+
+    return [len(matrix)] + depth
