@@ -1,17 +1,17 @@
 #!/usr/bin/env python3
+""" function to transpose a matrix"""
+
+
 def matrix_transpose(matrix):
+    """ function :transpose a matrix
 
-    """returns the transpose of a 2d matrix"""
-    transpose = []
-    for i in range(len(matrix[0])):
-        transpose.append([])
-        for j in range(len(matrix)):
-            transpose[i].append(matrix[j][i])
-            print(matrix[j][i])
-            #we start with the first row when i = 0
-            # [0,0][1,0] i= row and j column position first loop
-            #then [0,1][1,1]
+    Arguments:
+        matrix: matrix to calculate
 
+    Returns:
+        transposed matrix
+    """
 
-    return transpose
- 
+    result = [[matrix[j][i] for j in range(len(matrix))]
+              for i in range(len(matrix[0]))]
+    return result
